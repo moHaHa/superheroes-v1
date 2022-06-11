@@ -11,7 +11,6 @@ import erpCheckbox from './forms/checkbox'
 import toolbar from './toolbar'
 import erpRadio from './forms/radios'
 import erpTextarea from './forms/textarea'
-
 Vue.component(erpTextarea.name, erpTextarea)
 Vue.component(toolbar.name, toolbar)
 Vue.component(erpRadio.name, erpRadio)
@@ -23,4 +22,14 @@ Vue.component(erpSwitch.name, erpSwitch)
 Vue.component(mainPage.name, mainPage)
 Vue.component(erpSelect.name, erpSelect)
 Vue.component(erpImgPicker.name, erpImgPicker)
+
 Vue.component(erpTree.name, erpTree)
+
+import svuHeader from './svu-header'
+Vue.component(svuHeader.name, svuHeader)
+import svuLogo from './svu-logo'
+Vue.component(svuLogo.name, svuLogo)
+import svuNav from './svu-nav'
+Vue.component(svuNav.name, svuNav)
+import svuCourse from './svu-course'
+Vue.component(svuCourse.name, svuCourse)

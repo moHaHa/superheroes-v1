@@ -13,8 +13,7 @@ export default {
   components: {
     'erp-header': erpHeader
   },
-  computed: {
-  },
+  computed: {},
   created () {}
 }
 </script>
@@ -23,13 +22,11 @@ div.theme--light.v-application {
   color: var(--v-text-black-base);
   /* color: red; */
 }
-div.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) .v-list-item__content{
+div.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled)
+  .v-list-item__content {
   color: var(--v-text-black-base);
-  
 }
-.tabs-menue-others .v-list-item .v-list-item__title   {
+.tabs-menue-others .v-list-item .v-list-item__title {
   color: var(--v-text-black-base);
-
 }
-
 </style>

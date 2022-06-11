@@ -1,0 +1,48 @@
+body {
+    background: #1b1b1b;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1b1b1b;
+    width: 300px;
+    height: 350px;
+    margin: 30px;
+    border-radius: 15px;
+    border: solid 3px;
+}
+
+.card-image {
+    height: 130px;
+    margin: 7px;
+    background-size: cover;
+    border-radius: 15px 15px 15px;
+}
+
+.JavaScript {
+    background-image: url("https://www.w3docs.com/uploads/media/default/0001/05/4482fe09d95a0be765154b9cefff5e07f7fc32ff.png");
+}
+.complete {
+    background-image: url("https://camo.githubusercontent.com/e250a8968aca7aa4cf11673dd2e791d6c7f18b52d594c0567d7c983510e035d7/68747470733a2f2f7675657363686f6f6c2e696f2f6d656469612f66303037663630353734343464396137663536373136333339316432623336362f7675656a732d332d6d61737465722d636c6173732d6e6f742d7472616e73706172656e742e6a7067");
+}
+
+.Python {
+    background-image: url("https://mofeeed.com/wp-content/uploads/2021/07/python2-1.png");
+}
+
+.node {
+    background-image: url("https://www.filepicker.io/api/file/nlMKa4JeSBysXoj7pa90");
+}
+
+.Html {
+    background-image: url("https://media.onlinecoursebay.com/2019/03/28004056/954710_6b16_3.jpg");
+}
+
+.mysql {
+    background-image: url("https://i0.wp.com/tutorialsplanet.net/wp-content/uploads/2019/10/755454.jpg?resize=480%2C270&ssl=1");
+}
