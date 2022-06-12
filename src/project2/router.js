@@ -9,9 +9,17 @@ export default {
         {
           path: 'articles',
           component: () => import('./admin/pages/articles'),
-          children: [
-            
-          ]
+          children: []
+        },  
+        {
+          path: 'courses',
+          component: () => import('./admin/pages/courses'),
+          children: []
+        },  
+        {
+          path: 'playlists',
+          component: () => import('./admin/pages/playlists'),
+          children: []
         },  
       ]
     },

@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer :right="$vuetify.rtl" app class="dark-grey" dark permanent>
     <v-list>
-      <v-list-item v-for="item in items" :key="item.title" link>
+      <v-list-item :to="item.path" v-for="item in items" :key="item.title" link>
         <v-list-item-icon>
           <v-icon>{{ item.icon }}</v-icon>
         </v-list-item-icon>
@@ -26,9 +26,9 @@ export default {
     ,data() {
         return {
             items:[
-          { title: 'Dashboard', icon: 'mdi-view-dashboard' },
-          { title: 'Account', icon: 'mdi-account-box' },
-          { title: 'Admin', icon: 'mdi-gavel' },
+          { title: 'Articles', icon: 'mdi-file' ,path:'/svu/admin/articles' },
+          { title: 'Courses', icon: 'mdi-play-box-outline' ,path:'/svu/admin/courses' },
+          { title: 'Youtube Playlists', icon: 'mdi-youtube' ,path:'/svu/admin/playlists' },
         ],
         }
     }
