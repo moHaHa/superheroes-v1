@@ -19,8 +19,9 @@ export default {
   data () {
     return {
       navList: [
-        { path: 'home', text: 'الرئيسية' },
-        { path: 'courses', text: 'الكورسات' }
+        { path: '/svu/school/home', text: 'الرئيسية' },
+        { path: '/svu/school/courses', text: 'الكورسات' },
+        { path: '/svu/school/library', text: 'المكتبة' }
       ]
     }
   }

@@ -3,16 +3,13 @@
         .v-input__control .v-input__slot {
             min-height: 34px !important;
             height: 34px;
-            // background-color: var(--v-white-base);
-        }
-        .theme--light.v-label {
-            color: var(--v-white-base);
+            background-color: var(--v-white-base);
         }
         .v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state)
             > .v-input__control
             > .v-input__slot
             fieldset {
-            color: var(--v-white-base);
+            color: var(--v-accent-darken1);
             transition: all 0.15s ease-in;
         }
         .v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state):not(.v-input--is-disabled)
@@ -20,10 +17,7 @@
             > .v-input__slot:hover
             fieldset {
             transition: all 0.15s ease-in;
-            color: var(--v-white-base);
-        }
-        .theme--light.v-input input, .theme--light.v-input textarea {
-            color: var(--v-white-base)
+            color: var(--v-accent-darken1);
         }
         .text-input[data-v-520ca20d]
             .v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state)
@@ -74,7 +68,7 @@
         }
         .v-input__icon--clear button {
             font-size: 17px;
-            color: var(--v-white-base);
+            color: var(--v-accent-darken1);
         }
 
         .v-text-field--outlined {

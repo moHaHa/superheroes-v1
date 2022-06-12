@@ -33,3 +33,11 @@ import svuNav from './svu-nav'
 Vue.component(svuNav.name, svuNav)
 import svuCourse from './svu-course'
 Vue.component(svuCourse.name, svuCourse)
+import svuArticle from './svu-article' 
+Vue.component(svuArticle.name, svuArticle)
+import svuLoginContainer from './svu-login-container' 
+Vue.component(svuLoginContainer.name, svuLoginContainer)
+import svuInput from './svu-forms/svu-input' 
+Vue.component(svuInput.name, svuInput)
+import svuAdminNavigation from './svu-admin-navigation' 
+Vue.component(svuAdminNavigation.name, svuAdminNavigation)

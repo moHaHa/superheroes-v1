@@ -1,9 +1,9 @@
 <template>
-  <div class="svu-hero-section">
+  <div class="svu-hero-section mdn">
     <div class="homepage-hero dark">
       <section style="z-index: 1">
         <v-container>
-          <div class="text-h2 hero-text-section">
+          <div style="font-size:3rem" class="hero-text-section">
             مجتمع لمطوري الويب في جميع انحاء الوطن العربي
           </div>
           <div class="mt-5">
@@ -303,7 +303,8 @@
 export default {}
 </script>
 
-<style lang="scss">
+
+<style  scoped>
 .breadcrumbs-container,
 .document-toc-container,
 .language-menu,
@@ -324,7 +325,12 @@ ul.prev-next {
 .main-page-content pre {
   border-left-width: 2px;
 }
-@import url("https://developer.mozilla.org/static/css/main.b5ddd898.css");
+/* @import url("https://developer.mozilla.org/static/css/main.b5ddd898.css"); */
+@import './assets/mozilla.scss';
+</style>
+<style lang="scss">
+
+
 // .svu-hero-section {
 //   height: calc(70vh - 73px);
 // }
@@ -336,7 +342,7 @@ ul.prev-next {
 }
 .homepage-hero .homepage-hero-bg .mandala-translate {
   -webkit-transform: translate(12rem, -8rem);
-  transform: translate(30rem, 8rem);
+  transform: translate(30rem, 4rem);
 }
 .homepage-hero .homepage-hero-bg {
   direction: ltr;
@@ -349,7 +355,7 @@ ul.prev-next {
 .svu-hero-section .homepage-hero section {
   max-width: inherit;
   justify-content: start;
-  padding-top: 9rem;
+  padding-top: 5rem;
 }
 .hero-text-section {
   max-width: 600px;

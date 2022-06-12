@@ -19,7 +19,11 @@ export default {
 }
 </script>
 <style lang="scss">
-*:lang(ar) {
+* {
+  font-family: "Tajawal", sans-serif !important;
+}
+@import url("https://fonts.googleapis.com/css2?family=Tajawal&display=swap");
+div.v-application   *  {
   font-family: "Tajawal", sans-serif !important;
 }
 @import "~vue-tabulator/dist/scss/bootstrap/tabulator_bootstrap4";

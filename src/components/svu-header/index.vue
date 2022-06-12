@@ -1,5 +1,6 @@
 <template>
-  <div class="svu-header dark-grey">
+ <v-system-bar app height="auto" class="px-0">
+   <div class="svu-header dark-grey tw-w-full">
     <div class="svu-header-container">
       <v-container class="">
         <div class="d-flex justify-space-between">
@@ -8,13 +9,14 @@
             <svu-nav> </svu-nav>
           </div>
           <div class="d-flex align-center">
-            <v-btn class="me-4" outlined color="white">تسحيل الدخول</v-btn>
-            <v-btn>تسجيل جديد</v-btn>
+            <v-btn :to="'/svu/school/login'" class="me-4" outlined color="white">تسجيل الدخول</v-btn>
+            <v-btn :to="'/svu/school/new-register'">تسجيل جديد</v-btn>
           </div>
         </div>
       </v-container>
     </div>
   </div>
+ </v-system-bar>
 </template>
 
 <script>

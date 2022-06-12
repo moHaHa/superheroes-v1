@@ -1,6 +1,6 @@
 <template>
   <div>
-    <svu-header></svu-header>
+   
     <router-view></router-view>
   </div>
 </template>

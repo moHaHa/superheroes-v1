@@ -282,19 +282,19 @@ export default {
   border-end-start-radius: 8px; */
   border-radius: 8px;
 }
-.v-navigation-drawer__border {
+/* .v-navigation-drawer__border {
   display: none;
-}
-.v-navigation-drawer--right {
+} */
+/* .v-navigation-drawer--right {
   right: 7px !important;
-}
-.erp-v-navigation-drawer-left {
+} */
+/* .erp-v-navigation-drawer-left {
   left: 7px !important;
-}
-.v-navigation-drawer--right.erp-v-navigation-drawer-left {
+} */
+/* .v-navigation-drawer--right.erp-v-navigation-drawer-left {
   left: auto !important;
   right: 7px !important;
-}
+} */
 .mini-drawer-left-button {
   padding: 10px 12px;
   font-size: 14px;

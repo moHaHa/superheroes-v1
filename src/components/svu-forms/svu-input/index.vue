@@ -12,6 +12,7 @@
       :error="errors.length > 0"
       v-bind="$attrs"
       v-on="$listeners"
+      :placeholder="''"
     >
       <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
       <template v-if="errors.length > 0" v-slot:append>
@@ -33,9 +34,9 @@
 
 <script>
 import { ValidationProvider } from 'vee-validate'
-// import { mapGetters, mapMutations } from 'vuex'
+
 export default {
-  name: 'erp-input',
+  name: 'svu-input',
   components: {
     ValidationProvider
   },
@@ -44,16 +45,8 @@ export default {
       type: [Object, String],
       default: ''
     },
-      value: {
-        type:[String, Number]
-      },
-    VuexModule: {
-      type: String
-    }
-  },
-  data () {
-    return {
-    
+    value: {
+      type: [Number, String]
     }
   },
   computed: {
@@ -62,15 +55,10 @@ export default {
         return this.value
       },
       set (val) {
-        this.value = val
         this.$emit('input', val)
       }
     }
-  },
-  methods: {
-
-  },
-
+  }
 }
 </script>
 <style lang="scss" scoped>

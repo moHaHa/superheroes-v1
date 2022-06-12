@@ -1,5 +1,7 @@
 <template>
   <v-app>
+     <svu-header></svu-header>
+    
     <v-main class="dark-black">
       <router-view></router-view>
     </v-main>
@@ -16,7 +18,32 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Tajawal&display=swap");
-* {
-  font-family: "Tajawal", sans-serif;
+div.v-application div div   *   {
+  font-family: "Tajawal", sans-serif !important;
 }
+div.v-application div div  .text-h3
+   {
+  font-family: "Tajawal", sans-serif !important;
+}
+div.v-application div div  .text-h2
+   {
+  font-family: "Tajawal", sans-serif !important;
+}
+div.v-application div div  .text-h6
+   {
+  font-family: "Tajawal", sans-serif !important;
+}
+div.v-application div div  .text-h5
+   {
+  font-family: "Tajawal", sans-serif !important;
+}
+div.v-application div div  .text-h4
+   {
+  font-family: "Tajawal", sans-serif !important;
+}
+div.v-application div div  .text-h1
+   {
+  font-family: "Tajawal", sans-serif !important;
+}
+@import './style.scss'
 </style>
