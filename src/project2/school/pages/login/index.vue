@@ -1,8 +1,6 @@
 <template>
-  <div>
+  <div class="tw-h-full">
     <svu-login-container :title="'تسجيل الدخول'" cols="4">
-      
-   
       <v-row>
         <v-col cols="12">
           <erp-input label="اسم المستخدم"></erp-input>

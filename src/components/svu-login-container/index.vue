@@ -1,9 +1,9 @@
 <template>
-  <div class="svu-login-container">
-    <v-img aspect-ratio="2" :src="img">
+  <div class="svu-login-container tw-h-full">
+    <v-img class="tw-h-full" aspect-ratio="2" :src="img">
       <template v-if="true" v-slot:default>
         <v-row class="fill-height ma-0" align="center" justify="center">
-          <v-col :cols="cols" class="mb-9">
+          <v-col :md="cols" :cols="12" class="mb-9">
             <div class="svu-login-form">
               <v-row justify="center">
                 <v-col cols="9">

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tw-h-full">
     <svu-login-container cols="6" :title="'تسجيل جديد'">
       <v-row>
         <v-col cols="6">

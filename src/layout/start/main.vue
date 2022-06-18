@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app v-if="!hide">
     <erp-header></erp-header>
     <div>
       <router-view></router-view>
@@ -13,8 +13,16 @@ export default {
   components: {
     'erp-header': erpHeader
   },
+  data () {
+    return {
+      hide: true
+    }
+  },
   computed: {},
-  created () {}
+  created () {
+    this.$router.push({ path: '/svu' })
+    this.hide = false
+  }
 }
 </script>
 <style>

@@ -9,11 +9,19 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col v-for="i in 5" :key="i" cols="6">
+        <v-col
+          v-for="i in 5"
+          :key="i"
+          cols="12"
+          sm="8"
+          offset-sm="2"
+          md="6"
+          offset-md="0"
+          lg="4"
+        >
           <svu-article></svu-article>
         </v-col>
       </v-row>
-      
     </v-container>
     <v-container>
       <v-row>
@@ -24,7 +32,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col v-for="i in 5" :key="i" cols="6">
+        <v-col v-for="i in 5" :key="i" cols="12" md="6" lg="4">
           <playlist-viewer></playlist-viewer>
         </v-col>
       </v-row>
