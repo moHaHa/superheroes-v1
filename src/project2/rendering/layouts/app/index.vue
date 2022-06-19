@@ -1,35 +1,25 @@
 <template>
-  <div id="minaret" class="minaret">
-    <erp-app>
-      <erp-main-header></erp-main-header>
-      <router-view></router-view>
-    </erp-app>
+  <div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 import erpAppVariablesStore from './erpAppVariablesStore'
-import AxiosInstance from '@/axios'
 import routeStore from './routeStore'
 import appStore from './appStore'
 export default {
   components: {},
-  computed: {
-    ...mapGetters('erp-app', ['modulesList', 'modulesListLoader'])
-  },
+
   data () {
     return {}
   },
   methods: {
-    ...mapActions('erp-app', ['fetch']),
     ...mapActions('erp-route', ['changeRoute']),
-    setURL () {
-      AxiosInstance.defaults.baseURL = `${window.location.origin}/api`
-    },
     routeChanged () {
-      console.log('app -> route')
       this.changeRoute(this.$route)
+      console.log('app ->', this.$route)
     }
   },
   watch: {
@@ -41,8 +31,7 @@ export default {
     this.$store.registerModule('erp-app', appStore)
     this.$store.registerModule('erp-route', routeStore)
     this.$store.registerModule('erp-app-variables', erpAppVariablesStore)
-    this.setURL()
-    this.fetch()
+
     this.routeChanged()
   },
   beforeDestroy () {

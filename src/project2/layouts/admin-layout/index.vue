@@ -1,9 +1,6 @@
 <template>
   <div class="admin-layout-default">
-     <svu-admin-navigation></svu-admin-navigation>
-    <div>
-      admin
-    </div>
+    <svu-admin-navigation></svu-admin-navigation>
     <router-view></router-view>
   </div>
 </template>

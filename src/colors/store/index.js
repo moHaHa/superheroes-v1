@@ -60,6 +60,16 @@ export default {
       'dark-grey': '#161616',
       'med-grey': '#858585',
       'light-grey': '#ABABAB'
+    },
+    dark: {
+      'primary': '#FB7A90',
+      'secondary': '#A2163B',
+      'white': '#FFFFFF',
+      'dark-black': '#0C0C0C',
+      'light-black': '#1B1B1B',
+      'dark-grey': '#161616',
+      'med-grey': '#858585',
+      'light-grey': '#ABABAB'
     }
   },
   getters: {

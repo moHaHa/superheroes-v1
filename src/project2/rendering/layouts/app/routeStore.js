@@ -21,12 +21,21 @@ export default {
     listSlug (state) {
       return state.route['params'] ? state.route['params']['list'] : 'no list'
     },
+
     recordSlug (state) {
       return state.route['params']
         ? state.route['params']['record']
         : 'no table'
     },
-
+    newQuery (state) {
+      if (state.route['query']) {
+        if (state.route['query']['new'] === 'true') {
+          return true
+        } else return false
+      } else {
+        return false
+      }
+    },
     getParams (state) {
       return state.route['params'] ? state.route['params'] : {}
     },
