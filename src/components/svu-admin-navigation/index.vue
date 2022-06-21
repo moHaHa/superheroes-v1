@@ -1,5 +1,13 @@
 <template>
-  <v-navigation-drawer :right="$vuetify.rtl" app class="dark-grey" dark permanent>
+  <v-navigation-drawer
+    :style="{ top: `${headerH}px`, 'max-height': `calc(100% - ${headerH}px)` }"
+    
+    :right="$vuetify.rtl"
+    app
+    class="dark-grey"
+    dark
+    permanent
+  >
     <v-list>
       <v-list-item :to="item.path" v-for="item in items" :key="item.title" link>
         <v-list-item-icon>
@@ -21,23 +29,40 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
-    name:'svu-admin-navigation'
-    ,data() {
-        return {
-            items:[
-          { title: 'Articles', icon: 'mdi-file' ,path:'/svu/admin/articles' },
-          { title: 'Courses', icon: 'mdi-play-box-outline' ,path:'/svu/admin/courses' },
-          { title: 'Youtube Playlists', icon: 'mdi-youtube' ,path:'/svu/admin/playlists' },
-        ],
+  name: 'svu-admin-navigation',
+   computed:{
+    ...mapGetters('erp-route', ['headerH']),
+
+  },
+  data () {
+    return {
+      items: [
+        {
+          title: 'Articles',
+          icon: 'mdi-file',
+          path: '/svu/admin/rendering/app/table/article/list'
+        },
+        {
+          title: 'Courses',
+          icon: 'mdi-play-box-outline',
+          path: '/svu/admin/rendering/app/table/course/list'
+        },
+        {
+          title: 'Youtube Playlists',
+          icon: 'mdi-youtube',
+          path: '/svu/admin/rendering/app/table/playlist/list'
         }
+      ]
     }
+  }
 }
 </script>
 
 <style>
 .v-navigation-drawer__border {
-    background-color: var(--v-med-grey-base) !important;
-    /* border-bottom: 1px solid var(--v-med-grey-base); */
+  background-color: var(--v-med-grey-base) !important;
+  /* border-bottom: 1px solid var(--v-med-grey-base); */
 }
 </style>

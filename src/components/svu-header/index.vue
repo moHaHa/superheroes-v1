@@ -39,11 +39,8 @@
               </transition>
               <v-tooltip color="black" bottom>
                 <template v-slot:activator="{ on, attrs }">
-                  <v-avatar v-bind="attrs" v-on="on">
-                    <img
-                      src="https://lumiere-a.akamaihd.net/v1/images/avengers-characterthumbnail-captainamerica_65ba07ce.jpeg?region=0%2C0%2C300%2C300"
-                      alt="John"
-                    />
+                  <v-avatar color="primary"  size="38" v-bind="attrs" v-on="on">
+                     <span class="white--text text-h5">{{fullName[0]}}</span>
                   </v-avatar>
                 </template>
                 <span>
@@ -72,22 +69,18 @@
           </div>
         </v-container>
       </div>
-      <div class="svu-breacrumb light-black">
-        <v-container class="py-1">
-          <div class="white--text d-flex align-center">
-            ادارة النظام
-            <v-icon>mdi-chevron-left</v-icon>
-            {{ path }}
-          </div>
-        </v-container>
-      </div>
+    <svuBreadcrumb v-if="inAdmin"  />
     </div>
   </v-system-bar>
 </template>
 
 <script>
+import svuBreadcrumb from  './components/breadcrumb'
 import { mapGetters, mapMutations } from 'vuex'
 export default {
+  components:{
+    svuBreadcrumb
+  },
   name: 'svu-header',
   data () {
     return {
@@ -99,7 +92,9 @@ export default {
     path () {
       return 'ddd'
     },
-    ...mapGetters('user-settings', ['isLogin', 'fullName', 'email'])
+    
+    ...mapGetters('user-settings', ['isLogin', 'fullName', 'email']),
+    ...mapGetters('erp-route', ['inAdmin'])
   },
   methods: {
     ...mapMutations('user-settings', ['logout']),

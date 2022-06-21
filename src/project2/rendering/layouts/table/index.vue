@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 import store from './store'
 export default {
@@ -17,8 +17,10 @@ export default {
     return {}
   },
   methods: {
+    ...mapActions('erp-app-variables', ['changeActiveTable']),
     tableChanged () {
       console.log('table ->', this.tableSlug)
+      this.changeActiveTable(this.tableSlug)
     }
   },
   watch: {

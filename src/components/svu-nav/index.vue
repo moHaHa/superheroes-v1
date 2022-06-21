@@ -66,7 +66,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('settings', ['isLogin'])
+    ...mapGetters('user-settings', ['isLogin'])
   },
   data () {
     return {
