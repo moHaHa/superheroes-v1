@@ -40,17 +40,17 @@ export default {
     return {
       items: [
         {
-          title: 'Articles',
+          title: 'مقالات',
           icon: 'mdi-file',
           path: '/svu/admin/rendering/app/table/article/list'
         },
         {
-          title: 'Courses',
+          title: 'كورسات',
           icon: 'mdi-play-box-outline',
           path: '/svu/admin/rendering/app/table/course/list'
         },
         {
-          title: 'Youtube Playlists',
+          title: 'قوائم تشغيل على يوتيوب',
           icon: 'mdi-youtube',
           path: '/svu/admin/rendering/app/table/playlist/list'
         }

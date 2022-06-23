@@ -2,8 +2,8 @@ module.exports = {
   transpileDependencies: ['vuetify'],
 
   devServer: {
-    host: 'localhost',
-    proxy: 'http://192.168.101.66'
+    // host: 'localhost',
+    // proxy: 'http://192.168.101.66'
   },
 
   pluginOptions: {

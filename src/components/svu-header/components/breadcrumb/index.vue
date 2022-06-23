@@ -3,10 +3,9 @@
     <v-container class="py-1">
       <div class="white--text d-flex align-center">
         <span> ادارة المحتوى </span>
-        <v-icon>mdi-chevron-left</v-icon>
-        <span class="mx-2" v-if="activeTable['the_words_ar']">></span>
+          <v-icon v-if="activeTable['the_words_ar']">mdi-chevron-left</v-icon>
         <span v-if="activeTable['the_words_ar']" >{{activeTable['the_words_ar']}}</span>
-        <span class="mx-2" v-if="newQuery">></span>
+        <v-icon v-if="newQuery">mdi-chevron-left</v-icon>
         <span v-if="newQuery" >اضافة {{activeTable['word_ar']}}</span>
       </div>
     </v-container>

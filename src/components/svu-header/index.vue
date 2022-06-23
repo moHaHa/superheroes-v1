@@ -100,7 +100,7 @@ export default {
     ...mapMutations('user-settings', ['logout']),
     onResize () {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight }
-      console.log(this.windowSize)
+      
       if (this.windowSize.x < 600) {
         this.sizeScreen = 'xs'
       } else {

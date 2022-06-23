@@ -1,19 +1,35 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="12">
-        <v-data-table
+      <v-col  cols="12">
+        <v-card dark>
+          <v-data-table
           dark
+         
           :headers="headers"
-          :items="desserts"
+          :items="records"
           sort-by="calories"
           class="elevation-1"
         >
           <template v-slot:top>
             <v-toolbar flat>
-              <v-toolbar-title>{{tableSlug}}</v-toolbar-title>
+              <v-toolbar-title>
+              {{activeTable['the_words_ar']}}
+              </v-toolbar-title>
               <v-divider class="mx-4" inset vertical></v-divider>
               <v-spacer></v-spacer>
+              
+                <v-progress-circular
+                v-if="listLoading"
+                :size="15"
+                :width="2"
+                class="mb-2 me-3"
+                color="primary"
+                indeterminate
+              ></v-progress-circular>
+               <v-btn v-else @click="fetchList" class="mb-2 me-3" small color="primary" dark icon >
+                <v-icon small>mdi-reload</v-icon>
+              </v-btn>
               <v-btn color="primary" dark class="mb-2" @click="newClicked()">
                 اضافة عنصر جديد
               </v-btn>
@@ -23,19 +39,38 @@
               <v-dialog v-model="editDialog" max-width="500px">
                 <edit-record v-model="recordToEdit" :table="tableSlug" />
               </v-dialog>
-              <v-dialog v-model="dialogDelete" max-width="500px">
-                <v-card>
+            
+              <v-dialog v-model="deleteDialog" max-width="500px">
+                 <v-card dark>
                   <v-card-title class="text-h5"
-                    >Are you sure you want to delete this item?</v-card-title
+                    >
+                    هل انت متأكد انك تريد حذف هذا السطر
+                    </v-card-title
                   >
                   <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn color="blue darken-1" text @click="closeDelete"
-                      >Cancel</v-btn
+                    <v-btn @click="$router.push({query: {delete: false}})" color="" text 
+                      >
+                      إلغاء
+                      </v-btn
                     >
-                    <v-btn color="blue darken-1" text @click="deleteItemConfirm"
-                      >OK</v-btn
+                   
+                     <v-btn v-if="deleLoading"  disabled color="primary" text > 
+       <v-progress-circular
+              
+                :size="15"
+                :width="2"
+                
+                color="primary"
+                indeterminate
+              ></v-progress-circular>
+      </v-btn>
+                    <v-btn v-else color="primary" text  @click="dele()"
+                      >
+                      نعم
+                      </v-btn
                     >
+                    
                     <v-spacer></v-spacer>
                   </v-card-actions>
                 </v-card>
@@ -43,18 +78,24 @@
             </v-toolbar>
           </template>
           <template v-slot:[`item.actions`]="{ item }">
-            <v-btn x-small  @click="editClicked(item)">edit</v-btn>
+            <v-btn icon  @click="editClicked(item)">
+               <v-icon color="primary" dark>mdi-pencil-box</v-icon>
+            </v-btn>
+            <v-btn icon  @click="deleteClicked(item)">
+                <v-icon color="primary" dark>mdi-delete</v-icon>
+            </v-btn>
           </template>
           <template v-slot:no-data>
-            <v-btn color="primary" @click="initialize"> Reset </v-btn>
+           <div class="py-3 primary--text"> لا يوجد معلومات لعرضها, قم بإضافة       {{activeTable['word_ar']}}</div>
           </template>
         </v-data-table>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import newRecord from './components/new-record'
 import editRecord from './components/edit-record'
 export default {
@@ -65,29 +106,14 @@ export default {
   data: () => ({
     recordToEdit: {},
     record: {},
-    headers: [
-      {
-        text: 'Title',
-        align: 'start',
-        value: 'title'
-      },
-      {
-        text: 'Description',
-        align: 'start',
-        value: 'description',
-        width: 400
-      },
-      {
-        text: 'Article URL',
-        align: 'start',
-        value: 'url'
-      },
-       { text: 'Actions', value: 'actions', sortable: false },
-    ],
+    deleLoading:false ,
+    
   }),
 
   computed: {
-    ...mapGetters('erp-route', ['tableSlug', 'newQuery' ,'editQuery']),
+        ...mapGetters('erp-table', ['records' , 'headers' , 'listLoading']),
+    ...mapGetters('erp-route', ['tableSlug', 'newQuery' ,'editQuery' , 'deleteQuery' , 'recordSlug']),
+       ...mapGetters('erp-app-variables', ['activeTable']),
     newDialog: {
       get () {
         return this.newQuery
@@ -104,6 +130,14 @@ export default {
         this.$router.push({ query: { edit: newVal } })
       }
     },
+    deleteDialog: {
+      get () {
+        return this.deleteQuery
+      },
+      set (newVal) {
+        this.$router.push({ query: { delete: newVal } })
+      }
+    },
     formTitle () {
       return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
     }
@@ -116,12 +150,27 @@ export default {
   },
 
   methods: {
+    
+      ...mapActions('erp-table', ['fetchList', 'deleteRecord' ]),
+      dele(){
+      this.deleLoading = true
+      console.log(this.recordSlug);
+      this.deleteRecord({id:this.recordSlug}).then(()=> {
+        this.deleLoading = false
+        this.$router.push({query: { delete: false}})
+        }).catch(err=> {console.log(err);this.deleLoading = false})
+    },
     newClicked () {
       this.$router.push({ query: { new: true } })
     },
     editClicked(item){
-      this.$router.push({query: {record: 3 , edit: true}})
+      this.$router.push({query: {record: item.id, edit: true}})
       this.recordToEdit = JSON.parse(JSON.stringify(item))
+    },
+    deleteClicked(item){
+      this.$router.push({query: {record: item.id, delete: true}})
+      
+      // deleteRecord
     },
     initialize () {
       this.desserts = [
@@ -147,9 +196,7 @@ export default {
       ]
     },
 
-    deleteClicked (item) {
-      console.log(item);
-    },
+  
   }
 }
 </script>

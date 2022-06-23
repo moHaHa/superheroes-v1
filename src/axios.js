@@ -1,5 +1,7 @@
 import axios from 'axios'
-const instance = axios.create({ validateStatus: () => true })
+const instance = axios.create({
+  baseURL: "http://webteam-001-site1.ftempurl.com/api",
+  validateStatus: () => true })
 
 instance.interceptors.response.use(
   (res) => {

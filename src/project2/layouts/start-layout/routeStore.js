@@ -35,8 +35,8 @@ export default {
         },
 
         recordSlug(state) {
-            return state.route["params"]
-                ? state.route["params"]["record"]
+            return state.route["query"]
+                ? state.route["query"]["record"]
                 : "no table";
         },
         newQuery(state) {
@@ -51,6 +51,15 @@ export default {
         editQuery(state) {
             if (state.route["query"]) {
                 if (state.route["query"]["edit"] === "true") {
+                    return true;
+                } else return false;
+            } else {
+                return false;
+            }
+        },
+        deleteQuery(state) {
+            if (state.route["query"]) {
+                if (state.route["query"]["delete"] === "true") {
                     return true;
                 } else return false;
             } else {
