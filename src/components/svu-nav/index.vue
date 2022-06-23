@@ -12,7 +12,37 @@
       <li v-if="isLogin" class="svu-nav-li">
         <router-link class="" :to="'/admin'">إدارة المحتوى</router-link>
       </li>
+      <li class="svu-nav-li">
+      <v-btn text dark @click="dialog = true">
+      المطورين
+      </v-btn>
+        
+      </li>
     </ul>
+    <v-dialog
+        transition="dialog-bottom-transition"
+        max-width="600"
+        v-model="dialog"
+      >
+       <v-card dark>
+            <v-toolbar
+              color="primary"
+              dark
+            >
+            اسماء الطلاب المساهمين في إنجاء المشروع
+            </v-toolbar>
+            <v-card-text>
+              <div class="text-h5 pa-12">Hello world!</div>
+            </v-card-text>
+            <v-card-actions class="justify-end">
+              <v-btn
+
+                text
+                @click="dialog = false"
+              >حسنا</v-btn>
+            </v-card-actions>
+          </v-card>
+      </v-dialog>
   </div>
   <div v-else class="ms-auto">
     <v-btn @click="drawer = true" icon>
@@ -70,6 +100,7 @@ export default {
   },
   data () {
     return {
+      dialog: false,
       drawer: false,
       navList: [
         { path: '/home', text: 'الرئيسية' },
