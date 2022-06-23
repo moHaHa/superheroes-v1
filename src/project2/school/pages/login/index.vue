@@ -9,7 +9,7 @@
           <erp-input label="كلمه السر"></erp-input>
         </v-col>
         <v-col cols="12">
-          <v-btn block>تسجيل الدخول</v-btn>
+          <v-btn block @click="join()">تسجيل الدخول</v-btn>
         </v-col>
       </v-row>
     </svu-login-container>
@@ -17,7 +17,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods:{
+    join(){
+      this.$store.commit('user-settings/login')
+      console.log('dd');
+    }
+  }
+}
 </script>
 
 <style></style>

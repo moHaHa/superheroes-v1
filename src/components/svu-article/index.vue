@@ -35,18 +35,17 @@
 </template>
 
 <script>
-import img from '@/assets/svu-course.png'
-export default {
-  name: 'svu-article',
-  data () {
-    return {
-      item: {
+  let item_d ={
         title: '5 Things I Wish I Knew When I Was Learning JavaScript',
         description:
           'JavaScript is the most difficult and the easiest programming language. But how is it possible? easiest programming language. easiest programming language. But how is  ',
         image: 'https://cdn.vuetifyjs.com/images/cards/foster.jpg',
         url: 'https://google.com'
-      }
+      } 
+export default {
+  name: 'svu-article',
+  data () {
+    return {
     }
   },
   methods: {
@@ -60,26 +59,11 @@ export default {
     }
   },
   props: {
-    title: {
-      type: String,
-      default: () => 'كورس من الجامعة الافتراضية السورية في برمجة الويب'
+    item: {
+      type: Object,
+      default: () => item_d
     },
-    image: {
-      type: String,
-      default: () => img
-    },
-    lessons: {
-      type: [String, Number],
-      default: () => 23
-    },
-    hours: {
-      type: [String, Number],
-      default: () => 10
-    },
-    price: {
-      type: [String, Number],
-      default: () => 10
-    }
+    
   }
 }
 </script>

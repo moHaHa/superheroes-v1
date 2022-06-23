@@ -1,7 +1,10 @@
 <template>
   <v-card  dark >
     <v-card-title>
-      <span class="text-h5">formTitle</span>
+      <span class="text-h5">
+
+        إضافة {{activeTable['word_ar']}}
+      </span>
     </v-card-title>
       
     <v-card-text>
@@ -27,10 +30,10 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-import articleForm from './components/article-form'
-import courseForm from './components/course-form'
-import playlistForm from './components/playlist-form'
+import { mapActions ,mapGetters } from 'vuex'
+import articleForm from '../models/article-form'
+import courseForm from '../models/course-form'
+import playlistForm from '../models/playlist-form'
 
 export default {
   components: {
@@ -52,6 +55,7 @@ export default {
     }
   },
   computed: {
+     ...mapGetters('erp-app-variables', ['activeTable']),
     val: {
       get () {
         return this.value

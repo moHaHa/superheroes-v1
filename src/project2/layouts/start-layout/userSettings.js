@@ -34,6 +34,17 @@ export default {
     logout (state) {
       state.isLogin = false
       state.user = null
+    },
+    login(state){
+      state.user =  {
+        username: 'admin',
+        password: '123',
+        email: 'diab.4869@gmail.com',
+        first_name: 'Mohammad',
+        last_name: 'Al Hallaq',
+        avatar: 'captainamerica'
+      }
+      state.isLogin = true
     }
   }
 }
