@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import ProjectRouter from '@/modules/project/router'
-import DashboardRouter from '@/modules/dashboard/router'
+// import DashboardRouter from '@/modules/dashboard/router'
 import svuRouter from '../project2/router'
 
 Vue.use(Router)
@@ -13,11 +13,11 @@ const router = new Router({
     return { x: 0, y: 0 }
   },
   routes: [
-    {
-      path: '',
-      component: () => import('../layout/start/main.vue'),
-      children: [...DashboardRouter]
-    },
+    // {
+    //   path: '',
+    //   component: () => import('../layout/start/main.vue'),
+    //   children: [...DashboardRouter]
+    // },
 
     {
       path: '/project',
@@ -25,7 +25,7 @@ const router = new Router({
       children: [...ProjectRouter]
     },
     {
-      path: '/svu',
+      path: '/',
       component: () => import('../project2/layouts/start-layout'),
       children: [svuRouter]
     },

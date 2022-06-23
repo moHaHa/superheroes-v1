@@ -28,9 +28,9 @@ export default {
     return {
       logo,
       links: [
-        { name: 'Home', link: '/svu/school/home' },
-        { name: 'Courses', link: '/svu/school/courses' },
-        { name: 'Library', link: '/svu/school/library' }
+        { name: 'Home', link: '/home' },
+        { name: 'Courses', link: '/courses' },
+        { name: 'Library', link: '/library' }
       ]
     }
   }

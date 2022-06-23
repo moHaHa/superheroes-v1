@@ -10,7 +10,7 @@
         <router-link class="" :to="item.path">{{ item.text }}</router-link>
       </li>
       <li v-if="isLogin" class="svu-nav-li">
-        <router-link class="" :to="'/svu/admin'">إدارة المحتوى</router-link>
+        <router-link class="" :to="'/admin'">إدارة المحتوى</router-link>
       </li>
     </ul>
   </div>
@@ -37,14 +37,14 @@
         >
           <v-list-item-title>{{ item.text }}</v-list-item-title>
         </v-list-item>
-        <v-list-item dark link :to="'/svu/school/login'" color="white">
+        <v-list-item dark link :to="'/login'" color="white">
           <v-list-item-content>
             <v-list-item-title btn>
               <v-btn block outlined>تسجيل الدخول</v-btn>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link :to="'/svu/school/new-register'" color="white">
+        <v-list-item link :to="'/new-register'" color="white">
           <v-list-item-content>
             <v-list-item-title btn>
               <v-btn block color="white"> تسجيل جديد</v-btn>
@@ -72,9 +72,9 @@ export default {
     return {
       drawer: false,
       navList: [
-        { path: '/svu/school/home', text: 'الرئيسية' },
-        { path: '/svu/school/courses', text: 'الكورسات' },
-        { path: '/svu/school/library', text: 'المكتبة' }
+        { path: '/home', text: 'الرئيسية' },
+        { path: '/courses', text: 'الكورسات' },
+        { path: '/library', text: 'المكتبة' }
       ]
     }
   }

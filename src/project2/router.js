@@ -64,8 +64,9 @@ export default {
       ]
     },
     {
-      path: 'school',
+      path: '',
       component: () => import('./layouts/school-layout/index.vue'),
+      redirect: '/home',
       children: [
         {
           path: 'home',

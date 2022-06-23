@@ -42,17 +42,17 @@ export default {
         {
           title: 'مقالات',
           icon: 'mdi-file',
-          path: '/svu/admin/rendering/app/table/article/list'
+          path: '/admin/rendering/app/table/article/list'
         },
         {
           title: 'كورسات',
           icon: 'mdi-play-box-outline',
-          path: '/svu/admin/rendering/app/table/course/list'
+          path: '/admin/rendering/app/table/course/list'
         },
         {
           title: 'قوائم تشغيل على يوتيوب',
           icon: 'mdi-youtube',
-          path: '/svu/admin/rendering/app/table/playlist/list'
+          path: '/admin/rendering/app/table/playlist/list'
         }
       ]
     }

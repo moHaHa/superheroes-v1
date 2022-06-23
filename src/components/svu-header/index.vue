@@ -5,7 +5,7 @@
         <v-container class="">
           <div class="d-flex justify-space-between">
             <div class="tw-w-full d-flex">
-              <svu-logo></svu-logo>
+              <svu-logo :to="'/home'"></svu-logo>
               <svu-nav :sizeScreen="sizeScreen"> </svu-nav>
             </div>
             <div
@@ -58,13 +58,13 @@
               class="d-flex align-center"
             >
               <v-btn
-                :to="'/svu/school/login'"
+                :to="'/login'"
                 class="me-4"
                 outlined
                 color="white"
                 >تسجيل الدخول</v-btn
               >
-              <v-btn :to="'/svu/school/new-register'">تسجيل جديد</v-btn>
+              <v-btn :to="'/new-register'">تسجيل جديد</v-btn>
             </div>
           </div>
         </v-container>
