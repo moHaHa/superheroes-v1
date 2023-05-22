@@ -5,8 +5,7 @@ import store from '../colors/store'
 export let darkTheme = store.getters.darkTheme(store.state)
 export let lightTheme = store.getters.lightTheme(store.state)
 
-
-export default new Vuetify({
+let v = new Vuetify({
   theme: {
     options: {
       customProperties: true
@@ -22,3 +21,5 @@ export default new Vuetify({
     }
   }
 })
+
+export default v

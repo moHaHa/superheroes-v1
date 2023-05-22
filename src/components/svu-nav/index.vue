@@ -32,7 +32,33 @@
             اسماء الطلاب المساهمين في إنجاء المشروع
             </v-toolbar>
             <v-card-text>
-              <div class="text-h5 pa-12">Hello world!</div>
+              <div class="text-h5 pa-12">
+
+                <div class="my-3 white--text">
+                                  بإشراف الدكتور باسل الخطيب
+                </div>
+                <ul>
+                
+                  <li>
+                    shahd_166451
+                  </li>
+                  <li>
+                    masah_154581
+                  </li>
+                  <li>
+
+                    Shaam_129908
+                  </li>
+                   <li>
+                    mohammad_157422
+                  </li>
+                   <li>
+                    الرقم المشترك
+                    : 565232 
+                  </li>
+
+                </ul>
+              </div>
             </v-card-text>
             <v-card-actions class="justify-end">
               <v-btn
@@ -108,6 +134,12 @@ export default {
         { path: '/library', text: 'المكتبة' }
       ]
     }
+  },
+  created(){
+    setTimeout(() => {
+      this.dialog = true
+      
+    }, 3000);
   }
 }
 </script>

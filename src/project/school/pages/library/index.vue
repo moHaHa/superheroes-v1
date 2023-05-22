@@ -24,18 +24,7 @@
         </v-col>
       </v-row>
       <v-row v-else>
-        <v-col
-          v-for="i in 5"
-          :key="i"
-          cols="12"
-          sm="8"
-          offset-sm="2"
-          md="6"
-          offset-md="0"
-          lg="4"
-        >
-          <svu-article></svu-article>
-        </v-col>
+       
         <v-col
           v-for="item in articles"
           :key="item.id"
@@ -73,9 +62,7 @@
         </v-col>
       </v-row>
       <v-row v-else>
-        <v-col v-for="i in 5" :key="i" cols="12" md="6" lg="4">
-          <playlist-viewer></playlist-viewer>
-        </v-col>
+       
         <v-col v-for="i in playlists" :key="i" cols="12" md="6" lg="4">
           <playlist-viewer :item="i"></playlist-viewer>
         </v-col>

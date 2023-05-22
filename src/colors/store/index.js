@@ -4,6 +4,7 @@
 export default {
   namespaced: true,
   state: {
+    
     activeTheme: {
       label: 'school',
       value: 'school'
@@ -54,6 +55,7 @@ export default {
     light: {
       'primary': '#FB7A90',
       'secondary': '#A2163B',
+      'new-color': '#ff94ca',
       'white': '#FFFFFF',
       'dark-black': '#0C0C0C',
       'light-black': '#1B1B1B',

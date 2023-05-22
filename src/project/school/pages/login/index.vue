@@ -21,7 +21,7 @@ export default {
   methods:{
     join(){
       this.$store.commit('user-settings/login')
-      console.log('dd');
+     this.$router.push({path: "./admin"})
     }
   }
 }
